@@ -1,0 +1,28 @@
+//https://www.freecodecamp.org/news/java-scanner-nextline-call-gets-skipped-solved/
+
+
+
+import java.util.Scanner;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+       
+       int i = scan.nextInt();
+        double d = scan.nextDouble();
+        
+        //After read in Integer will leave newline character inside input buffer
+        //Then new line character will be read inside nextLine( ) and s will print nothing
+        //So we have to put another nextLine to read in the newline inside the input buffer
+        
+        scan.nextLine();
+        String s= scan.nextLine();
+
+        // Write your code here.
+
+        System.out.println("String: " + s);
+        System.out.println("Double: " + d);
+        System.out.println("Int: " + i);
+    }
+}
