@@ -1,0 +1,20 @@
+import java.util.*;
+import java.text.*;
+
+public class Solution {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double payment = scanner.nextDouble();
+        scanner.close();
+       Locale INDIA = new Locale("en", "IN");
+           Locale[] locations = new Locale[]{Locale.US, INDIA, Locale.CHINA, Locale.FRANCE};
+
+
+
+for (Locale location : locations) {
+    NumberFormat formatter = DecimalFormat.getCurrencyInstance(location);
+    System.out.println((location == Locale.US ? location.getCountry() : location.getDisplayCountry()) + ": " + formatter.format(payment));
+}
+    }
+}
