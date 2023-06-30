@@ -1,0 +1,61 @@
+//Given a string , get its substrings and get highest and smallest of the substrings
+// Example: "welcometojava"  length of each substrings must be 3 , highest substring = wel and smallest substring = ava
+
+
+import java.util.Scanner;
+
+public class Solution {
+
+    public static String getSmallestAndLargest(String s, int k) {
+        String smallest = "";
+        String largest = "";
+        String result="";
+       
+        int len = s.length();
+        
+        if(len > 2){
+            String [] list = new String [len - ( k-1)];
+        
+            
+     for ( int i = 0 ; i <= len ;i++ ){
+            if( i+k <= len ){
+                list[i]=s.substring(  i , i+k ) ;
+            }
+        
+     } 
+        list = sorting(list); 
+            smallest = list[0];
+          largest = list[list.length-1];
+        
+        result = smallest + "\n" + largest;
+        }
+        return result;
+    }
+    
+   public static String [] sorting  (String []arr ) {
+              
+            for (int i = 0; i < arr.length; i++)   
+        {  
+        for (int j = i + 1; j < arr.length; j++)   
+        {  
+        String tmp ;  
+        if ((arr[i]).compareTo(arr[j])>0 )   
+        {  
+        tmp = arr[i];  
+        arr[i] = arr[j];  
+        arr[j] = tmp;  
+        }  
+        } } 
+        return arr;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String s = scan.next();
+        int k = scan.nextInt();
+        scan.close();
+      
+        System.out.println(getSmallestAndLargest(s, k));
+    }
+}
