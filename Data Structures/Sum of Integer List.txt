@@ -1,0 +1,13 @@
+import java.util.*;
+
+class Main {
+
+    public static List<Integer> simpleArraySum(List<Integer> a) {
+        return ar.stream().mapToInt(i->i).sum();
+    }
+
+    public static void main(String[] args) {
+        List<Integer> l = Arrays.asList(1, 2, 3);
+        System.out.println("Sum: " + simpleArraySum(l) );
+    }
+}
