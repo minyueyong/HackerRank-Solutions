@@ -1,0 +1,18 @@
+import java.util.*;
+
+class Main {
+
+    public static List<Integer> reverseArray(List<Integer> a) {
+        List<Integer> reverse = new ArrayList<>();
+        for (int i = a.size() - 1; i >= 0; i--) {
+            reverse.add(a.get(i));
+        }
+        return reverse;
+    }
+
+    public static void main(String[] args) {
+        List<Integer> l = Arrays.asList(1, 2, 3);
+        List<Integer> reversed = reverseArray(l);
+        System.out.println("Reversed List: " + reversed);
+    }
+}
