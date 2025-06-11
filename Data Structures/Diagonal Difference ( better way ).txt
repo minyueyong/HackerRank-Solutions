@@ -1,0 +1,18 @@
+function diagonalDifference(arr) {
+
+    // Write your code here
+    let leftToRight = 0
+    let rightToLeft = 0
+
+for(let i =0;i<arr.length ;i++){
+    leftToRight +=arr[i][i]
+    rightToLeft += arr[i][arr.length-1-i]
+}
+
+return  Math.abs(leftToRight-rightToLeft)
+}
+
+The row will stick to 0-2 
+But the column will be different 
+First Diagonal  0-2
+Second Diagonal 2-0

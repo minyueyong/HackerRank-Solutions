@@ -1,0 +1,20 @@
+  This is a staircase of size 4:
+
+   #
+  ##
+ ###
+####
+
+
+Given an integer ,print the staircase 
+
+public static void staircase(int n) {
+       
+        for ( int i=1 ; i < n+1 ; i ++ ){
+           
+            
+          
+             System.out.println ( " ".repeat(n-i)+"#".repeat(i));
+        }
+    }
+
