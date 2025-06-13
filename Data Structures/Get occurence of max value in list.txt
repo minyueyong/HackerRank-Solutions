@@ -1,0 +1,17 @@
+import java.util.*;
+
+class Main {
+
+    public static int birthdayCandles(List<Integer> candles) {
+       Collections.sort ( candles);
+       int max =  candles.get ( candles.size() -1 );
+       return Collections.frequency(candles, max);
+    }
+
+    public static void main(String[] args) {
+        List<Integer> l = Arrays.asList(1, 2, 3,3);
+        birthdayCandles ( l )
+      
+        
+    }
+}
