@@ -1,0 +1,25 @@
+    public static String timeConversion(String s) {
+   // Define a formatter for parsing the 12-hour input string
+        DateTimeFormatter parseFormatter = DateTimeFormatter.ofPattern("hh:mm:ssa", Locale.US);
+
+        // Parse the 12-hour time string into a LocalTime object
+        LocalTime localTime = LocalTime.parse(s, parseFormatter);
+
+        // Define a formatter for outputting in 24-hour format
+        DateTimeFormatter formatFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
+
+        // Format the LocalTime object into a 24-hour string
+        String twentyFourHourTime = localTime.format(formatFormatter);
+
+       
+       return twentyFourHourTime ; 
+    }
+
+
+Sample Input 0
+
+07:05:45PM
+
+Sample Output 0
+
+19:05:45
