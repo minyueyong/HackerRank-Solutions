@@ -1,0 +1,19 @@
+List<Integer> numbers = Arrays.asList(7, 2, 10, 3, 5);
+
+        // Sort the list
+        Collections.sort(numbers);
+
+        int size = numbers.size();
+        double median;
+
+        if (size % 2 == 1) {
+            // Odd: pick the middle element
+            median = numbers.get(size / 2);
+        } else {
+            // Even: average of the two middle elements
+            int mid1 = numbers.get((size / 2) - 1);
+            int mid2 = numbers.get(size / 2);
+            median = (mid1 + mid2) / 2.0;
+        }
+
+        System.out.println("Median: " + median);
