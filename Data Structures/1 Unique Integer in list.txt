@@ -1,0 +1,17 @@
+  public static int lonelyinteger(List<Integer> a) {
+        
+   for ( Integer b : a ){
+   
+      int occurence = Collections.frequency(a, b);
+      
+      
+      if (occurence == 1){
+       return b;
+      }
+      
+
+    }
+    
+   return 0;
+
+}

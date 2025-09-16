@@ -1,0 +1,11 @@
+    public static List<Integer> countingSort(List<Integer> arr) {
+    int [] frequencyArray = new int[100];
+    
+    for(int i =0 ; i < arr.size(); i ++){
+        frequencyArray[arr.get(i)] ++ ;
+    }
+    
+    return Arrays.stream(frequencyArray) // Creates an IntStream
+                                        .boxed()           // Converts int to Integer
+                                        .collect(Collectors.toList());
+    }

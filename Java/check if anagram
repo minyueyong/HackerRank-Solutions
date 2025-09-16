@@ -1,0 +1,56 @@
+aaabbb   - 3 changes to turn into anagram
+
+freq [0] = 3
+freq [2] = -3
+
+ab       - 1 changes to turn into anagram
+abc      - negative because cannot be anagram
+mnop     - 2 changes to become anagram
+xyyx     - no changes needed
+left side is 1 and right side will minus it so no changes needed   
+freq [ x ] = 0
+freq [ y ] = 0
+
+
+char minus char will return u the difference of their UNICODE value
+a = 99 c = 97 so their difference is 2
+
+So if left substring have alphabet same as right substring , they will cancel each other out and no change is needed
+
+
+
+
+
+public static int anagram(String s) {
+    // Write your code here
+    
+    //if length of String is odd number , then cannot
+    if ( s.length() %2 != 0){
+        return -1;
+    }
+    
+
+    int mid = s.length()/2;
+    String left = s.substring(0 , mid);
+    String right = s.substring(mid);
+    
+    int [ ] freq = new int [26];  // store frequency for each alphabet
+    
+    for ( char c : left.toCharArray()){
+        freq [c -'a'] ++;                  //this char will be stored in corresponding position
+    }
+    
+    for ( char c  : right.toCharArray()){
+        freq [c -'a'] --;
+    }
+    
+    int changes = 0;
+    
+    for ( int f : freq){
+        if( f > 0 ){
+            changes += f;
+        }
+    }
+;
+return changes;
+    }
