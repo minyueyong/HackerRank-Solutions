@@ -1,0 +1,40 @@
+Given a list of Integer 
+
+grade = 84 round to 85 ( 85-84 is less than 3 )
+grade = 29 do not round ( result is less than 38 )
+grade = 57 do not round ( 60 -57 is 3 or higher )
+
+
+- this method check if the value is a multiple of 5 , if its not then change to nearest multiple of 5
+- After the value divide by 5 , lets say the remainder is 2 , we need 3 to add it to nearest multiple of 5
+- hence n + ( 5 - ( n % 5 )) 
+public static Integer roundToNearest5 ( Integer n ){
+        return (( n % 5 == 0)? n : n +( 5- ( n%5 )));   
+     }
+
+    public static List<Integer> gradingStudents(List<Integer> grades) {
+    
+      Integer nearest5 = 0;
+      
+      List <Integer> finalGrade = new ArrayList<>();
+
+      for ( Integer i : grades) {
+        
+        nearest5 = roundToNearest5 ( i );
+        
+        
+        if ( i < 38  || nearest5 - i  >= 3  ){
+            finalGrade.add (i); 
+            
+        }else if  ( nearest5 - i  < 3 ){
+            
+            finalGrade.add(nearest5);
+        }
+        
+       
+      }
+      
+       return finalGrade;
+        
+
+    }
